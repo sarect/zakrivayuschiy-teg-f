@@ -31,46 +31,6 @@
   margin-block-end: 100px;
 }
 
-.modal {
-  border: 2px solid var(--text-color, #000000);
-  padding: 25px 30px;
-  color: var(--text-color, #000000);
-  font-family: var(--page-accent-font-family, "PressStart2P", fantasy);
-  line-height: 1.5;
-  text-transform: uppercase;
-  background: var(--page-background-color, #ffffff);
-  max-inline-size: 355px;
-  font-size: 14px;
-  line-height: 21px;
-}
-
-.modal[open] {
-  display: grid;
-  grid-template-rows: repeat(2, min-content);
-  gap: 30px;
-}
-
-.modal::backdrop {
-  opacity: 0.75;
-  background: var(--color-black, #000000);
-}
-
-.modal__content {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.modal__icon {
-  flex-shrink: 0;
-  inline-size: 39px;
-  block-size: 39px;
-}
-
-.modal__button {
-  inline-size: 100%;
-}
-
 .page-title {
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
 }
@@ -155,7 +115,7 @@
 .main {
   display: grid;
   justify-items: center;
-  gap: 57px;
+  gap: 50px;
   padding-block-end: 105px;
 }
 
@@ -232,7 +192,7 @@
   display: grid;
   gap: 27px;
   border-block-start: 2px solid var(--text-color, #000000);
-  padding: 29px 24px 0 24px;
+  padding: 29px 24px 0;
   font-size: 18px;
   line-height: calc(21 / 18);
 }
@@ -242,7 +202,7 @@
   justify-content: end;
   align-items: stretch;
   gap: 5px;
-  padding: 25px 25px 23px 25px;
+  padding: 25px 22px 23px;
 }
 
 .card__icon-button {
@@ -264,17 +224,24 @@
 }
 
 .button {
-  position: relative;
-  z-index: 1;
+  position: relative; 
+  z-index: 1; 
   border: 2px solid var(--text-color, #000000);
-  padding: 10px 36px;
-  font-family: var(--page-accent-font-family, "PressStart2P", fantasy);
-  font-size: 14px;
-  text-transform: inherit;
-  background: var(--page-background-color, #ffffff);
-  transition: box-shadow 0.3s ease;
-  cursor: pointer;
-  appearance: none;
+  font-family: var(--page-accent-font-family, "PressStart2P", fantasy);  
+  font-size: 14px; 
+  text-transform: inherit; 
+  background: var(--page-background-color, #ffffff); 
+  transition: box-shadow 0.3s ease; 
+  cursor: pointer; 
+  appearance: none; 
+  width: 130px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .button:focus {
@@ -303,13 +270,11 @@
 }
 
 .button--save {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  width: 339px;
+  height: 55px;
+  margin-top: -7px;
   gap: 10px;
-  padding: 15px 20px;
-  margin-top: -10px;
+  margin-top: 3px;
 }
 
 .button__text,
@@ -326,6 +291,45 @@
 .like-icon {
   block-size: 36px;
   inline-size: 39px;
+}
+
+.modal {
+  border: 2px solid var(--text-color, #000000);
+  padding: 25px 30px;
+  color: var(--text-color, #000000);
+  font-family: var(--page-accent-font-family, "PressStart2P", fantasy);
+  text-transform: uppercase;
+  background: var(--page-background-color, #ffffff);
+  max-inline-size: 355px;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.modal[open] {
+  display: grid;
+  grid-template-rows: repeat(2, min-content);
+  gap: 30px;
+}
+
+.modal::backdrop {
+  opacity: 0.75;
+  background: var(--color-black, #000000);
+}
+
+.modal__content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.modal__icon {
+  flex-shrink: 0;
+  inline-size: 39px;
+  block-size: 39px;
+}
+
+.modal__button {
+  inline-size: 100%;
 }
 
 /*filters*/
@@ -359,14 +363,29 @@
 }
 
 @media (width < 376px) {
+  .card__img-label {
+    padding-right: 0;
+    margin-right: -2px;
+  }
+
+  .card__content-text {
+    width: 317.05px;
+  }
+
+  .card__footer {
+    margin-top: 18px;
+  }
+  
   .modal {
     padding: 28px 34px 28px 40px;
     max-inline-size: 340px;
-    width: 80%;
+    width: 100%;
   }
 
   .button--save {
     flex-direction: column;
+    width: 310px;
+    height: 84px;
   }
 
   .button__icon {

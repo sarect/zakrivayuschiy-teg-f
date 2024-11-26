@@ -33,7 +33,6 @@
 
 .like-icon .heart {
   transform-origin: center;
-  transform: translateX(5px);
 }
 
 .like-icon .sparks {
